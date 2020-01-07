@@ -10,11 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
-    var grids = [GridImage]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +21,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+        // sceneView.showsStatistics = true
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
         // Create a new scene
         let scene = SCNScene()
@@ -51,37 +50,43 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-    
+}
 
-    // MARK: - ARSCNViewDelegate
+// MARK: - ARSCNViewDelegate
+extension ViewController: ARSCNViewDelegate {
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        let grid = GridImage(anchor: anchor as! ARPlaneAnchor)
-        self.grids.append(grid)
-        node.addChildNode(grid)
+            // cast anchor to type ARPlaneAnchor
+            guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+            
+            // create a plane with height and width
+            let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x * 0.5), height: CGFloat(planeAnchor.extent.z * 0.5))
+            
+            // add material to plane
+            plane.materials.first?.diffuse.contents = UIImage(named:"overlay_grid.png")
+            
+            // create a plane Node
+            let planeNode = SCNNode(geometry: plane)
+            
+            // position plane node
+            planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
+            
+            planeNode.transform = SCNMatrix4MakeRotation(Float(-.pi / 2.0), 1.0, 0.0, 0.0);
+            
+            node.addChildNode(planeNode)
+
     }
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+            guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+            guard let planeNode = node.childNodes.first else { return }
+            guard let plane = planeNode.geometry as? SCNPlane else { return }
+
+            // update plane height and width
+            plane.width = CGFloat(planeAnchor.extent.x * 0.5)
+            plane.height = CGFloat(planeAnchor.extent.z * 0.5)
+
+            // position plane node
+            planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
     }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
-    
 }
