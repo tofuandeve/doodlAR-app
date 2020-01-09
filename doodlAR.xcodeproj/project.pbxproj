@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3E2A2623C52E8200A0A1ED /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2523C52E8200A0A1ED /* ImageCard.swift */; };
+		4C3E2A2823C52EED00A0A1ED /* ImageLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2723C52EED00A0A1ED /* ImageLibrary.swift */; };
+		4C3E2A2A23C5342300A0A1ED /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */; };
+		4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */; };
+		4C3E2A2E23C5398D00A0A1ED /* defaultImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */; };
 		4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A423C337F0003720BA /* AppDelegate.swift */; };
 		4C6E86A723C337F0003720BA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86A623C337F0003720BA /* art.scnassets */; };
-		4C6E86A923C337F0003720BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A823C337F0003720BA /* ViewController.swift */; };
+		4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A823C337F0003720BA /* ARViewController.swift */; };
 		4C6E86AC23C337F0003720BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86AA23C337F0003720BA /* Main.storyboard */; };
 		4C6E86AE23C337F3003720BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86AD23C337F3003720BA /* Assets.xcassets */; };
 		4C6E86B123C337F3003720BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86AF23C337F3003720BA /* LaunchScreen.storyboard */; };
@@ -36,10 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C3E2A2523C52E8200A0A1ED /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
+		4C3E2A2723C52EED00A0A1ED /* ImageLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLibrary.swift; sourceTree = "<group>"; };
+		4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = defaultImages.plist; sourceTree = "<group>"; };
 		4C6E86A123C337F0003720BA /* doodlAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doodlAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E86A423C337F0003720BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6E86A623C337F0003720BA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		4C6E86A823C337F0003720BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C6E86A823C337F0003720BA /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		4C6E86AB23C337F0003720BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C6E86AD23C337F3003720BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C6E86B023C337F3003720BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,12 +113,17 @@
 			children = (
 				4C6E86A423C337F0003720BA /* AppDelegate.swift */,
 				4C6E86A623C337F0003720BA /* art.scnassets */,
-				4C6E86A823C337F0003720BA /* ViewController.swift */,
+				4C6E86A823C337F0003720BA /* ARViewController.swift */,
+				4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */,
+				4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */,
 				4C6E86AA23C337F0003720BA /* Main.storyboard */,
 				4C6E86AD23C337F3003720BA /* Assets.xcassets */,
 				4C6E86AF23C337F3003720BA /* LaunchScreen.storyboard */,
 				4C6E86B223C337F3003720BA /* Info.plist */,
 				4C6E86DA23C33BF3003720BA /* GridImage.swift */,
+				4C3E2A2523C52E8200A0A1ED /* ImageCard.swift */,
+				4C3E2A2723C52EED00A0A1ED /* ImageLibrary.swift */,
+				4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */,
 			);
 			path = doodlAR;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3E2A2E23C5398D00A0A1ED /* defaultImages.plist in Resources */,
 				4C6E86A723C337F0003720BA /* art.scnassets in Resources */,
 				4C6E86B123C337F3003720BA /* LaunchScreen.storyboard in Resources */,
 				4C6E86AE23C337F3003720BA /* Assets.xcassets in Resources */,
@@ -263,9 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C6E86A923C337F0003720BA /* ViewController.swift in Sources */,
+				4C3E2A2A23C5342300A0A1ED /* CollectionViewController.swift in Sources */,
+				4C3E2A2823C52EED00A0A1ED /* ImageLibrary.swift in Sources */,
+				4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */,
+				4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */,
 				4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */,
 				4C6E86DB23C33BF3003720BA /* GridImage.swift in Sources */,
+				4C3E2A2623C52E8200A0A1ED /* ImageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

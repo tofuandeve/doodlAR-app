@@ -10,10 +10,11 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController {
+class ARViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     var isPlaced = false
+    var displayImage = UIImage(named: "studioGhibli")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
         // Create a new scene and set to view
         let scene = SCNScene()
         sceneView.scene = scene
+        
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
@@ -64,7 +66,7 @@ class ViewController: UIViewController {
         if !(self.isPlaced) {
             let planeGeometry = SCNPlane()
             let material = SCNMaterial()
-            material.diffuse.contents = UIImage(named: "studioGhibli")
+            material.diffuse.contents = displayImage
             planeGeometry.materials = [material]
 
             let imageNode = SCNNode(geometry: planeGeometry)
@@ -81,7 +83,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - ARSCNViewDelegate
-extension ViewController: ARSCNViewDelegate {
+extension ARViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if (!self.isPlaced) {

@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Td6-4C-UTO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTZ-36-ypm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Library-->
-        <scene sceneID="M0o-m3-od4">
+        <!--Collection View Controller-->
+        <scene sceneID="MjE-l2-xxf">
             <objects>
-                <viewController id="RH9-Dg-snU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H3w-Wf-QY2">
+                <collectionViewController id="xLp-Jg-7eo" customClass="CollectionViewController" customModule="doodlAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iBK-kE-lXG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-lZ-kav">
-                                <rect key="frame" x="100" y="350" width="180" height="99"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" title="Button" image="studioGhibli_small"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="qyM-bc-92P"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="eXl-yL-ha9"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Library" id="SYf-CC-mkT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q7W-Cz-2eR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dFv-d7-pLA">
+                            <size key="itemSize" width="125" height="125"/>
+                            <size key="estimatedItemSize" width="125" height="125"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="11d-r9-Fge" customClass="CollectionViewCell" customModule="doodlAR" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="125" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D42-y7-P9v">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="Tjk-Dt-3eq">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="125" height="125"/>
+                                <connections>
+                                    <outlet property="cellImageView" destination="Tjk-Dt-3eq" id="NKQ-vb-t5j"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="xLp-Jg-7eo" id="dMV-1O-szx"/>
+                            <outlet property="delegate" destination="xLp-Jg-7eo" id="f3O-Fc-MFN"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="FAI-ib-izB"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hH3-oe-IRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935.20000000000005" y="126.35467980295567"/>
+            <point key="canvasLocation" x="933.60000000000002" y="851.97044334975374"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="doodlAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ARViewController" id="BV1-FR-VrT" customClass="ARViewController" customModule="doodlAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,31 +89,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="126"/>
+            <point key="canvasLocation" x="1804" y="852"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="NZx-S6-tRg">
+        <scene sceneID="nbf-iT-8SS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Td6-4C-UTO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTZ-36-ypm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hse-1j-jDR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rfa-kO-zon">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AhJ-X2-V4t">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="RH9-Dg-snU" kind="relationship" relationship="rootViewController" id="OuO-j3-hbg"/>
+                        <segue destination="xLp-Jg-7eo" kind="relationship" relationship="rootViewController" id="0Aw-LV-xQC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6eU-t4-aNJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8G8-09-f52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="126"/>
+            <point key="canvasLocation" x="82" y="852"/>
         </scene>
     </scenes>
     <resources>
-        <image name="studioGhibli_small" width="360" height="198"/>
+        <image name="cat" width="500" height="500"/>
     </resources>
 </document>
