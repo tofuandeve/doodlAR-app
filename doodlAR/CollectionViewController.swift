@@ -11,10 +11,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
-    
     var images = [[String:String]]()
 
-    
     private func loadImages() -> [[String:String]] {
         let path = Bundle.main.path(forResource: "defaultImages", ofType: "plist")
         return NSArray.init(contentsOf: URL.init(fileURLWithPath: path!)) as! [[String:String]]
@@ -39,23 +37,16 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return self.images.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-        
         let image = self.images[indexPath.row]
-    
-        // Configure the cell
         cell.cellImageView.image = UIImage(named: image["image"]!)
     
         return cell
@@ -64,13 +55,10 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // This gets called when an item is selected
         let selectedImage = self.images[indexPath.row]
-        // 1st create the next view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "ARViewController") as! ARViewController
         vc.displayImage = UIImage(named: selectedImage["image"]!)!
         self.navigationController!.pushViewController(vc, animated: true)        
     }
-
 }
