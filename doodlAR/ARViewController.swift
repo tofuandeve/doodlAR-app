@@ -13,27 +13,30 @@ import ARKit
 class ARViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
-    var isPlaced = false
+    private var isPlaced = false
     var displayImage = UIImage(named: "studioGhibli")
+    
+    @IBOutlet weak var displayText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.delegate = self
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
-
-        let scene = SCNScene()
-        sceneView.scene = scene
+        toggleShowFeaturePoints()
+        setSceneViewToNewScene()
+        
+        displayText.text = "Tap to place image"
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        sceneView.session.run(configuration)
+        enableWorldTracking()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,13 +52,15 @@ class ARViewController: UIViewController {
         placeImage(hitTest)
         
         self.isPlaced = true
+        toggleShowFeaturePoints()
+        displayText.text = ""
     }
     
-    func placeImage(_ hitResult: ARHitTestResult) {
+    private func placeImage(_ hitResult: ARHitTestResult) {
         if !(self.isPlaced) {
-            let planeGeometry = SCNPlane()
+            let planeGeometry = SCNPlane(width: CGFloat(0.1), height: CGFloat(0.1))
             let material = SCNMaterial()
-            material.diffuse.contents = displayImage
+            material.diffuse.contents = displayImage?.alpha(0.7)
             planeGeometry.materials = [material]
 
             let imageNode = SCNNode(geometry: planeGeometry)
@@ -63,10 +68,24 @@ class ARViewController: UIViewController {
             imageNode.eulerAngles = SCNVector3(imageNode.eulerAngles.x + (-Float.pi / 2), imageNode.eulerAngles.y, imageNode.eulerAngles.z)
             imageNode.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y, hitResult.worldTransform.columns.3.z)
 
-            let scene = SCNScene()
-            sceneView.scene = scene
+            setSceneViewToNewScene()
             sceneView.scene.rootNode.addChildNode(imageNode)
         }
+    }
+    
+    private func enableWorldTracking() {
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        sceneView.session.run(configuration)
+    }
+    
+    private func toggleShowFeaturePoints() {
+        sceneView.debugOptions = self.isPlaced ? [] : [ARSCNDebugOptions.showFeaturePoints]
+    }
+    
+    private func setSceneViewToNewScene() {
+        let scene = SCNScene()
+        sceneView.scene = scene
     }
 }
 
@@ -84,20 +103,21 @@ extension ARViewController: ARSCNViewDelegate {
             planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
             planeNode.transform = SCNMatrix4MakeRotation(Float(-.pi / 2.0), 1.0, 0.0, 0.0);
             node.addChildNode(planeNode)
+            
         }
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        if(!self.isPlaced) {
-            guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-            guard let planeNode = node.childNodes.first else { return }
-            guard let plane = planeNode.geometry as? SCNPlane else { return }
-
-            // update plane height and width
-            plane.width = CGFloat(planeAnchor.extent.x)
-            plane.height = CGFloat(planeAnchor.extent.z)
-            // position plane node
-            planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
-        }
-    }
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        if(!self.isPlaced) {
+//            guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+//            guard let planeNode = node.childNodes.first else { return }
+//            guard let plane = planeNode.geometry as? SCNPlane else { return }
+//
+//            // update plane height and width
+//            plane.width = CGFloat(planeAnchor.extent.x)
+//            plane.height = CGFloat(planeAnchor.extent.z)
+//            // position plane node
+//            planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
+//        }
+//    }
 }

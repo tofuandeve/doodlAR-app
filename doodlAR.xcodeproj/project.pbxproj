@@ -10,6 +10,7 @@
 		4C3E2A2A23C5342300A0A1ED /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */; };
 		4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */; };
 		4C3E2A2E23C5398D00A0A1ED /* defaultImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */; };
+		4C3E2A3423C9437100A0A1ED /* UIImage+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */; };
 		4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A423C337F0003720BA /* AppDelegate.swift */; };
 		4C6E86A723C337F0003720BA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86A623C337F0003720BA /* art.scnassets */; };
 		4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A823C337F0003720BA /* ARViewController.swift */; };
@@ -42,6 +43,7 @@
 		4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = defaultImages.plist; sourceTree = "<group>"; };
+		4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Alpha.swift"; sourceTree = "<group>"; };
 		4C6E86A123C337F0003720BA /* doodlAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doodlAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E86A423C337F0003720BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6E86A623C337F0003720BA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				4C6E86A423C337F0003720BA /* AppDelegate.swift */,
 				4C6E86A623C337F0003720BA /* art.scnassets */,
 				4C6E86A823C337F0003720BA /* ARViewController.swift */,
+				4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */,
 				4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */,
 				4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */,
 				4C6E86AA23C337F0003720BA /* Main.storyboard */,
@@ -277,6 +280,7 @@
 				4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */,
 				4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */,
 				4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */,
+				4C3E2A3423C9437100A0A1ED /* UIImage+Alpha.swift in Sources */,
 				4C6E86DB23C33BF3003720BA /* GridImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
