@@ -14,7 +14,7 @@ class ARViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     private var isPlaced = false
-    var displayImage = UIImage(named: "studioGhibli")
+    private var displayImage = UIImage(named: "studioGhibli")
     
     @IBOutlet weak var displayText: UILabel!
     
@@ -28,10 +28,7 @@ class ARViewController: UIViewController {
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
-        
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
+        setTranslucentNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +51,10 @@ class ARViewController: UIViewController {
         self.isPlaced = true
         toggleShowFeaturePoints()
         displayText.text = ""
+    }
+    
+    func setDisplayImage(_ image: UIImage) {
+        self.displayImage = image
     }
     
     private func placeImage(_ hitResult: ARHitTestResult) {
@@ -87,11 +88,17 @@ class ARViewController: UIViewController {
         let scene = SCNScene()
         sceneView.scene = scene
     }
+    
+    // TODO: THIS SHOULD BE PUT IN A HELPER FILE
+    private func setTranslucentNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
+    }
 }
 
 // MARK: - ARSCNViewDelegate
 extension ARViewController: ARSCNViewDelegate {
-    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if (!self.isPlaced) {
             guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
@@ -102,8 +109,7 @@ extension ARViewController: ARSCNViewDelegate {
             let planeNode = SCNNode(geometry: plane)
             planeNode.position = SCNVector3(CGFloat(planeAnchor.center.x),0.0,CGFloat(planeAnchor.center.z))
             planeNode.transform = SCNMatrix4MakeRotation(Float(-.pi / 2.0), 1.0, 0.0, 0.0);
-            node.addChildNode(planeNode)
-            
+            node.addChildNode(planeNode)     
         }
     }
     

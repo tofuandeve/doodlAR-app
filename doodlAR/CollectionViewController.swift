@@ -21,9 +21,8 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.images = loadImages()
-        self.navigationItem.title = "Library"
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        setNavigationBarStyle(withTitle: "Library")
+        setTranslucentNavigationBar()
     }
 
     // MARK: UICollectionViewDataSource
@@ -50,7 +49,20 @@ class CollectionViewController: UICollectionViewController {
         let selectedImage = self.images[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "DisplayImageView") as! DisplayImageViewController
-        vc.displayImage = UIImage(named: selectedImage["image"]!)!
+        vc.setDisplayImage(UIImage(named: selectedImage["image"]!)!)
         self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    private func setNavigationBarStyle(withTitle navBarTitle: String?) {
+        self.navigationItem.title = navBarTitle
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+    }
+    
+    // TODO: THIS SHOULD BE PUT IN A HELPER FILE
+    private func setTranslucentNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
     }
 }

@@ -11,17 +11,29 @@ import UIKit
 class DisplayImageViewController: UIViewController {
 
     @IBOutlet weak var displayImageView: UIImageView!
-    var displayImage: UIImage!
+    private var displayImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.displayImageView.image = displayImage
+        setTranslucentNavigationBar()
     }
     
     @IBAction func onDrawButtonTapped(_ sender: RoundButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "ARViewController") as! ARViewController
-        vc.displayImage = self.displayImage
+        vc.setDisplayImage(self.displayImage)
         self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    func setDisplayImage(_ image: UIImage) {
+        self.displayImage = image
+    }
+    
+    // TODO: THIS SHOULD BE PUT IN A HELPER FILE
+    private func setTranslucentNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
     }
 }
