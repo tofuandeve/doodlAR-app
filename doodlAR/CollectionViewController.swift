@@ -22,17 +22,9 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.images = loadImages()
         self.navigationItem.title = "Library"
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -57,8 +49,8 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedImage = self.images[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ARViewController") as! ARViewController
+        let vc = storyboard.instantiateViewController(identifier: "DisplayImageView") as! DisplayImageViewController
         vc.displayImage = UIImage(named: selectedImage["image"]!)!
-        self.navigationController!.pushViewController(vc, animated: true)        
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
