@@ -13,6 +13,7 @@
 		4C3E2A3423C9437100A0A1ED /* UIImage+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */; };
 		4C3E2A7223CC377D00A0A1ED /* DisplayImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7123CC377D00A0A1ED /* DisplayImageViewController.swift */; };
 		4C3E2A7623CC3B4B00A0A1ED /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7523CC3B4B00A0A1ED /* RoundedButton.swift */; };
+		4C3E2A7A23CD38C600A0A1ED /* ARPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7923CD38C600A0A1ED /* ARPaperViewController.swift */; };
 		4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A423C337F0003720BA /* AppDelegate.swift */; };
 		4C6E86A723C337F0003720BA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86A623C337F0003720BA /* art.scnassets */; };
 		4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A823C337F0003720BA /* ARViewController.swift */; };
@@ -48,6 +49,7 @@
 		4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Alpha.swift"; sourceTree = "<group>"; };
 		4C3E2A7123CC377D00A0A1ED /* DisplayImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayImageViewController.swift; sourceTree = "<group>"; };
 		4C3E2A7523CC3B4B00A0A1ED /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4C3E2A7923CD38C600A0A1ED /* ARPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPaperViewController.swift; sourceTree = "<group>"; };
 		4C6E86A123C337F0003720BA /* doodlAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doodlAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E86A423C337F0003720BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6E86A623C337F0003720BA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				4C3E2A3323C9437100A0A1ED /* UIImage+Alpha.swift */,
 				4C6E86A823C337F0003720BA /* ARViewController.swift */,
 				4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */,
+				4C3E2A7923CD38C600A0A1ED /* ARPaperViewController.swift */,
 				4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */,
 				4C3E2A7123CC377D00A0A1ED /* DisplayImageViewController.swift */,
 				4C6E86AA23C337F0003720BA /* Main.storyboard */,
@@ -285,6 +288,7 @@
 				4C3E2A2A23C5342300A0A1ED /* CollectionViewController.swift in Sources */,
 				4C3E2A7223CC377D00A0A1ED /* DisplayImageViewController.swift in Sources */,
 				4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */,
+				4C3E2A7A23CD38C600A0A1ED /* ARPaperViewController.swift in Sources */,
 				4C3E2A7623CC3B4B00A0A1ED /* RoundedButton.swift in Sources */,
 				4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */,
 				4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */,
