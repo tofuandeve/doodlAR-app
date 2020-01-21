@@ -14,6 +14,9 @@
 		4C3E2A7223CC377D00A0A1ED /* DisplayImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7123CC377D00A0A1ED /* DisplayImageViewController.swift */; };
 		4C3E2A7623CC3B4B00A0A1ED /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7523CC3B4B00A0A1ED /* RoundedButton.swift */; };
 		4C3E2A7A23CD38C600A0A1ED /* ARPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E2A7923CD38C600A0A1ED /* ARPaperViewController.swift */; };
+		4C5513A823D6C40400DF2D07 /* EdgeDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C5513A623D6C40400DF2D07 /* EdgeDetector.cpp */; };
+		4C5513AB23D6CC0B00DF2D07 /* OpenCVCameraWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C5513AA23D6CC0B00DF2D07 /* OpenCVCameraWrapper.mm */; };
+		4C5513AF23D6F9DB00DF2D07 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5513AE23D6F9DB00DF2D07 /* opencv2.framework */; };
 		4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A423C337F0003720BA /* AppDelegate.swift */; };
 		4C6E86A723C337F0003720BA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E86A623C337F0003720BA /* art.scnassets */; };
 		4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E86A823C337F0003720BA /* ARViewController.swift */; };
@@ -43,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C068D4823D5A38A00518C29 /* doodlAR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "doodlAR-Bridging-Header.h"; sourceTree = "<group>"; };
 		4C3E2A2923C5342300A0A1ED /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4C3E2A2B23C5343A00A0A1ED /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = defaultImages.plist; sourceTree = "<group>"; };
@@ -50,6 +54,11 @@
 		4C3E2A7123CC377D00A0A1ED /* DisplayImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayImageViewController.swift; sourceTree = "<group>"; };
 		4C3E2A7523CC3B4B00A0A1ED /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		4C3E2A7923CD38C600A0A1ED /* ARPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPaperViewController.swift; sourceTree = "<group>"; };
+		4C5513A623D6C40400DF2D07 /* EdgeDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeDetector.cpp; sourceTree = "<group>"; };
+		4C5513A723D6C40400DF2D07 /* EdgeDetector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EdgeDetector.hpp; sourceTree = "<group>"; };
+		4C5513A923D6CC0B00DF2D07 /* OpenCVCameraWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVCameraWrapper.h; sourceTree = "<group>"; };
+		4C5513AA23D6CC0B00DF2D07 /* OpenCVCameraWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVCameraWrapper.mm; sourceTree = "<group>"; };
+		4C5513AE23D6F9DB00DF2D07 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		4C6E86A123C337F0003720BA /* doodlAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doodlAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E86A423C337F0003720BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6E86A623C337F0003720BA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5513AF23D6F9DB00DF2D07 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C068D4923D5A64100518C29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C5513AE23D6F9DB00DF2D07 /* opencv2.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C6E869823C337F0003720BA = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +117,7 @@
 				4C6E86BA23C337F4003720BA /* doodlARTests */,
 				4C6E86C523C337F4003720BA /* doodlARUITests */,
 				4C6E86A223C337F0003720BA /* Products */,
+				4C068D4923D5A64100518C29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +149,11 @@
 				4C6E86B223C337F3003720BA /* Info.plist */,
 				4C6E86DA23C33BF3003720BA /* GridImage.swift */,
 				4C3E2A2D23C5398D00A0A1ED /* defaultImages.plist */,
+				4C068D4823D5A38A00518C29 /* doodlAR-Bridging-Header.h */,
+				4C5513A623D6C40400DF2D07 /* EdgeDetector.cpp */,
+				4C5513A723D6C40400DF2D07 /* EdgeDetector.hpp */,
+				4C5513A923D6CC0B00DF2D07 /* OpenCVCameraWrapper.h */,
+				4C5513AA23D6CC0B00DF2D07 /* OpenCVCameraWrapper.mm */,
 			);
 			path = doodlAR;
 			sourceTree = "<group>";
@@ -220,6 +244,7 @@
 				TargetAttributes = {
 					4C6E86A023C337F0003720BA = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					4C6E86B623C337F4003720BA = {
 						CreatedOnToolsVersion = 11.3;
@@ -290,10 +315,12 @@
 				4C6E86A923C337F0003720BA /* ARViewController.swift in Sources */,
 				4C3E2A7A23CD38C600A0A1ED /* ARPaperViewController.swift in Sources */,
 				4C3E2A7623CC3B4B00A0A1ED /* RoundedButton.swift in Sources */,
+				4C5513AB23D6CC0B00DF2D07 /* OpenCVCameraWrapper.mm in Sources */,
 				4C3E2A2C23C5343A00A0A1ED /* CollectionViewCell.swift in Sources */,
 				4C6E86A523C337F0003720BA /* AppDelegate.swift in Sources */,
 				4C3E2A3423C9437100A0A1ED /* UIImage+Alpha.swift in Sources */,
 				4C6E86DB23C33BF3003720BA /* GridImage.swift in Sources */,
+				4C5513A823D6C40400DF2D07 /* EdgeDetector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +493,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57X2M75D7L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = doodlAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,6 +507,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ada.c12.eve.doodlAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "doodlAR/doodlAR-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,8 +518,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57X2M75D7L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = doodlAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -493,6 +532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ada.c12.eve.doodlAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "doodlAR/doodlAR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
