@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "white_paper.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "width" : 1200
+  }
+}

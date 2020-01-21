@@ -26,6 +26,13 @@ class DisplayImageViewController: UIViewController {
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onDrawOnPaperButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ARPaperViewController") as! ARPaperViewController
+//        vc.setDisplayImage(self.displayImage)
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     func setDisplayImage(_ image: UIImage) {
         self.displayImage = image
     }

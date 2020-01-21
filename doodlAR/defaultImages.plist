@@ -4,6 +4,30 @@
 <array>
 	<dict>
 		<key>image</key>
+		<string>corgi</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>husky</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>husky1</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>trashpanda</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>sammy</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>cat1</string>
+	</dict>
+	<dict>
+		<key>image</key>
 		<string>cat</string>
 	</dict>
 	<dict>

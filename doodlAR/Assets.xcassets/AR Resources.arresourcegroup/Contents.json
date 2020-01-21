@@ -1,0 +1,14 @@
+{
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "resources" : [
+    {
+      "filename" : "tofu.arreferenceimage"
+    },
+    {
+      "filename" : "white_paper.arreferenceimage"
+    }
+  ]
+}
