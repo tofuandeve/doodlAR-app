@@ -54,7 +54,9 @@ void detectEdge(cv::Mat& cap) {
             
             cv::Scalar color(252, 224, 5, 255);
             cv::drawContours(image, input, 0, color, 2);
-            cv::circle(image, cv::Point(centerX, centerY), 5, color);
+//            cv::circle(image, cv::Point(centerX, centerY), 20, color);
+            cv::putText(image, "Image",cv::Point(centerX - 75, centerY),
+                    cv::FONT_HERSHEY_COMPLEX_SMALL, 2, color, 2);
             break;
         }
     }

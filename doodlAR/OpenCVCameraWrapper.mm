@@ -24,7 +24,7 @@
         _videoCamera = [[CvVideoCamera alloc] initWithParentView:imageView];
         
         _videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset640x480;
+        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
         _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
         _videoCamera.defaultFPS = 30;
         _videoCamera.grayscaleMode = NO;
