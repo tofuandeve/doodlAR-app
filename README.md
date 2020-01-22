@@ -28,11 +28,10 @@ Augmented reality drawing iOS app that makes creativity fun and accessible for e
   - Apple App Store will host my application and I will use it to deploy applications to my users.
 
 <p align="center">
-  <img height="400" src="https://media.giphy.com/media/UtJb45Hl1rdiWHnRRb/giphy.gif">
-  <img height="400" src="https://media.giphy.com/media/JR0zNQUmqeiRzcm1ag/giphy.gif">
-  <br>
-  <img height="400" src="https://media.giphy.com/media/JQGsEtxlqmcIlAzlcM/giphy.gif">
-  <img height="400" src="https://media.giphy.com/media/YqyrucDHrWS8jsLBCD/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/UtJb45Hl1rdiWHnRRb/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/JR0zNQUmqeiRzcm1ag/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/JQGsEtxlqmcIlAzlcM/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/YqyrucDHrWS8jsLBCD/giphy.gif">
 </p>
 
 
