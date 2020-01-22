@@ -31,7 +31,7 @@ Augmented reality drawing iOS app that makes creativity fun and accessible for e
   <img height="300" src="https://media.giphy.com/media/UtJb45Hl1rdiWHnRRb/giphy.gif">
   <img height="300" src="https://media.giphy.com/media/JR0zNQUmqeiRzcm1ag/giphy.gif">
   <img height="300" src="https://media.giphy.com/media/JQGsEtxlqmcIlAzlcM/giphy.gif">
-  <img height="300" src="https://media.giphy.com/media/Kcne7KBwY5x7byw28R/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/YqyrucDHrWS8jsLBCD/giphy.gif">
   <br> 
 </p>
 
