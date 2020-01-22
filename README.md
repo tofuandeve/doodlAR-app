@@ -27,13 +27,6 @@ Augmented reality drawing iOS app that makes creativity fun and accessible for e
 - Infrastructure
   - Apple App Store will host my application and I will use it to deploy applications to my users.
 
-<p align="center">
-  <img height="300" src="https://media.giphy.com/media/UtJb45Hl1rdiWHnRRb/giphy.gif">
-  <img height="300" src="https://media.giphy.com/media/JR0zNQUmqeiRzcm1ag/giphy.gif">
-  <img height="300" src="https://media.giphy.com/media/JQGsEtxlqmcIlAzlcM/giphy.gif">
-  <img height="300" src="https://media.giphy.com/media/YqyrucDHrWS8jsLBCD/giphy.gif">
-</p>
-
 
 ## MVP Feature Set
 1.  Detect a surface using ARKit
@@ -43,6 +36,13 @@ Augmented reality drawing iOS app that makes creativity fun and accessible for e
 1.  Place image on surface
     - Users display selected image virtually on the surface detected by phone camera
     - Enable world tracking functionality: create a correspondence between real surface and virtual images which allows users to view sketch images from different angle when camera position changes (user can only move their camera)
+    
+<p align="center">
+  <img height="300" src="https://media.giphy.com/media/UtJb45Hl1rdiWHnRRb/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/JR0zNQUmqeiRzcm1ag/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/JQGsEtxlqmcIlAzlcM/giphy.gif">
+  <img height="300" src="https://media.giphy.com/media/YqyrucDHrWS8jsLBCD/giphy.gif">
+</p>
 
 ## Enhancement feature: Paper detection
 <p align="center">
