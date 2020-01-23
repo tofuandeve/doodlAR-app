@@ -4,15 +4,11 @@
 <array>
 	<dict>
 		<key>image</key>
-		<string>corgi</string>
+		<string>corgi01</string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>husky</string>
-	</dict>
-	<dict>
-		<key>image</key>
-		<string>husky1</string>
+		<string>husky11</string>
 	</dict>
 	<dict>
 		<key>image</key>
@@ -28,19 +24,23 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>cat</string>
+		<string>golden</string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>dog</string>
+		<string>shibe</string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>kitty</string>
+		<string>bunny01</string>
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>panda</string>
+		<string>cat00</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>cat01</string>
 	</dict>
 </array>
 </plist>
