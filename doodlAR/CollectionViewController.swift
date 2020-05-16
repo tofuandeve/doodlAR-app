@@ -22,7 +22,12 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.images = loadImages()
         setNavigationBarStyle(withTitle: "Library")
-        setTranslucentNavigationBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.3421930969, green: 0.3176463246, blue: 0.8521707058, alpha: 1)
     }
 
     // MARK: UICollectionViewDataSource
@@ -55,14 +60,8 @@ class CollectionViewController: UICollectionViewController {
     
     private func setNavigationBarStyle(withTitle navBarTitle: String?) {
         self.navigationItem.title = navBarTitle
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 20)!, NSAttributedString.Key.foregroundColor : UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
-    // TODO: THIS SHOULD BE PUT IN A HELPER FILE
-    private func setTranslucentNavigationBar() {
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
-    }
 }

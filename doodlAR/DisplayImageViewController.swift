@@ -19,6 +19,12 @@ class DisplayImageViewController: UIViewController {
         setTranslucentNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.3421930969, green: 0.3176463246, blue: 0.8521707058, alpha: 1)
+    }
+    
     @IBAction func onDrawButtonTapped(_ sender: RoundButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "ARViewController") as! ARViewController
@@ -35,12 +41,5 @@ class DisplayImageViewController: UIViewController {
     
     func setDisplayImage(_ image: UIImage) {
         self.displayImage = image
-    }
-    
-    // TODO: THIS SHOULD BE PUT IN A HELPER FILE
-    private func setTranslucentNavigationBar() {
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
     }
 }
